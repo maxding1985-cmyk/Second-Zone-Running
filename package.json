@@ -1,0 +1,28 @@
+{
+  "name": "run-chat",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AI + human hybrid Zone 2 voice running companion MVP.",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:mobile": "npm --workspace apps/mobile run start",
+    "dev:api": "npm --workspace apps/api run dev",
+    "build": "npm --workspaces --if-present run build",
+    "test": "npm --workspaces --if-present run test",
+    "typecheck": "npm --workspaces --if-present run typecheck",
+    "lint": "npm --workspaces --if-present run lint",
+    "export:web": "npm --workspace apps/mobile exec expo export -- --platform web --clear",
+    "build:preview:android": "cd apps/mobile && npx eas-cli build --profile preview --platform android",
+    "build:preview:ios": "cd apps/mobile && npx eas-cli build --profile preview --platform ios",
+    "test:e2e": "playwright test"
+  },
+  "engines": {
+    "node": "^20.19.4 || ^22.13.0 || ^24.3.0 || >=25.0.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.60.0"
+  }
+}

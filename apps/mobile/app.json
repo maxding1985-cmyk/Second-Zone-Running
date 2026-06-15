@@ -1,0 +1,47 @@
+{
+  "expo": {
+    "name": "跑步聊天",
+    "slug": "run-chat",
+    "version": "0.2.0",
+    "orientation": "portrait",
+    "scheme": "runchat",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.runchat.mvp"
+    },
+    "android": {
+      "package": "com.runchat.mvp",
+      "versionCode": 2,
+      "adaptiveIcon": {
+        "backgroundColor": "#F3EFE5"
+      }
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-audio",
+        {
+          "microphonePermission": "跑步聊天需要麦克风权限，用于跑中说话测试和强度反馈。",
+          "enableBackgroundPlayback": false,
+          "enableBackgroundRecording": false
+        }
+      ],
+      [
+        "expo-speech-recognition",
+        {
+          "microphonePermission": "跑步聊天需要麦克风权限，用于跑中说话测试和强度反馈。",
+          "speechRecognitionPermission": "跑步聊天需要语音识别权限，把你的说话测试转成文字用于强度判断。",
+          "androidSpeechServicePackages": ["com.google.android.googlequicksearchbox"]
+        }
+      ]
+    ],
+    "owner": "maxsnow",
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "015c9c7e-0737-4536-bade-f411ad79200f"
+      }
+    }
+  }
+}
