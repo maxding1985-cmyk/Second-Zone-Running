@@ -1,5 +1,7 @@
 # 跑步聊天
 
+[![CI](https://github.com/maxding1985-cmyk/Second-Zone-Running/actions/workflows/ci.yml/badge.svg)](https://github.com/maxding1985-cmyk/Second-Zone-Running/actions/workflows/ci.yml)
+
 AI + 真人混合式二区语音陪跑产品 MVP。
 
 ## 当前阶段
@@ -10,6 +12,8 @@ MVP v0.2：语音优先的二区说话测试验证版。当前核心不是继续
 
 - `/Users/user/Documents/跑步聊天/prd/P001-跑步聊天/07-MVP-v0.2二区说话测试假设验证.md`
 - `/Users/user/Documents/跑步聊天/prd/P001-跑步聊天/08-MVP-v0.2开发任务清单.md`
+- `/Users/user/Documents/跑步聊天/prd/P001-跑步聊天/09-MVP-v0.3语音实跑能力规划.md`
+- `/Users/user/Documents/跑步聊天/prd/P001-跑步聊天/10-MVP-v0.3开发任务清单.md`
 
 ## 项目结构
 
@@ -55,6 +59,18 @@ npm test                # 运行 API + 移动端逻辑测试
 npm run export:web      # 导出 Expo Web 预览
 npm run test:e2e        # 运行端到端自动化测试
 ```
+
+## 质量门禁
+
+GitHub Actions 会在 push / pull request 到 `main` 时自动执行：
+
+```bash
+npm ci
+npm run typecheck
+npm test
+```
+
+默认 CI 暂不运行 Playwright E2E，避免每次提交都安装浏览器和启动本地服务；E2E 仍可在本地通过 `npm run test:e2e` 手动执行。
 
 ## 端到端测试
 
